@@ -1,11 +1,17 @@
 package day05.member;
 
+import java.util.Scanner;
+
 // 역할: 회원 저장소 역할
 public class MemberRepository {
+    public static final int NOT_FOUND = -1;
+//    상수화
 
     Member[] memberList;
+    Member[] removeMembers;
 
     public MemberRepository() {
+
         this.memberList = new Member[3];
         memberList[0] = new Member(1, "abc@def.com",
                 "1234", "콩벌레",
@@ -85,6 +91,68 @@ public class MemberRepository {
             }
         }
         return null;
+    }
+
+    /*
+     * 이메일을 통해 저자된 회원의 인덱스값을 알아내는 메서드
+     * @param email 탐색 대상의 이메일
+     * @return : 찾아낸 인덱스, 못찾으면 -1리턴
+     * */
+    int findIndexByEmail(String email) {
+        for (int i = 0; i < memberList.length; i++) {
+            if (memberList[i].email.equals(email))
+                return i;
+        }
+        return NOT_FOUND;
+    }
+
+    /**
+     * 비밀번호를 수정하는 기능
+     *
+     * @param email:      수정 대상의 이메일
+     * @param newPassword : 변경할 새로운 비밀번호
+     */
+    boolean changePassword(String email, String newPassword) {
+        //수정진행
+        int index = findIndexByEmail(email);
+
+        if (index != NOT_FOUND)
+            return false;
+        memberList[index].password = newPassword;
+        return true;
+
+    }
+
+    String removeMember(String email) {
+
+        //인덱스 찾기
+
+        int index = findIndexByEmail(email);
+
+        if (index != -1) {
+            // 앞으로 땡기기
+            for (int i = index; i < memberList.length - 1; i++) {
+                memberList[i] = memberList[i + 1];
+            }
+
+            //배열 마지막 칸 없애기
+            Member[] copyMemberList = new Member[memberList.length - 1];
+            for (int i = 0; i < copyMemberList.length; i++) {
+                copyMemberList[i] = memberList[i];
+            }
+            memberList = copyMemberList;
+            copyMemberList = null;
+
+            return email;
+        } else {
+            return null;
+        }
+        //멤버가 비었는지 확인
+//        boolean inEmpty() {
+////            return (memberList.length== 0);
+//            return false;
+//        };
+
     }
 
 }

@@ -59,10 +59,11 @@ public class Casting {
         
 
         byte b1=100;
-        byte b2=20;
+        byte b2=30;
 
         //byte b3=b1+b2; 오류!!!!!!!!!!!!
         int b3=b1+b2;
+        //System.out.println(b3);
 
 
         

@@ -47,8 +47,11 @@ public class MemberView {
                     stop();
                     break;
                 case "4":
+                    changePasswordViewProcess();
                     break;
                 case "5":
+//                    if(mr.isEm)
+                    removeMemberViewProcess();
                     break;
                 case "6":
                     String answer = input("# 정말로 종료합니까? [y/n] : ");
@@ -63,6 +66,57 @@ public class MemberView {
                     System.out.println("\n# 메뉴 번호를 다시 입력하세요");
             }
         }
+    }
+
+    void removeMemberViewProcess() {
+
+        // 삭제대상 이메일 입력받기
+        String targetEmail
+                = input("# 삭제할 회원의 이메일: ");
+
+        // 존재하는지 확인 후 삭제 처리 위임
+        Member foundMember = mr.findByEmail(targetEmail);
+        if (foundMember != null) {
+            // -> 한번 더 y/n으로 삭제여부 묻기
+            String answer = input(String.format("# %s님의 정보를 정말 삭제합니까?? [y/n] : ", foundMember.memberName));
+            switch (answer.toUpperCase().charAt(0)) {
+                case 'Y':
+                    mr.removeMember(targetEmail);
+                    System.out.println("\n# 회원 정보 삭제 성공!!");
+                    break;
+                default:
+                    System.out.println("\n# 삭제를 취소합니다.");
+            }
+        } else {
+            System.out.println("\n# 조회 결과가 없습니다.");
+        }
+        stop();
+
+    }
+
+
+    //비밀번호 변경 입출력 처리
+    void changePasswordViewProcess() {
+
+        String email = input("# 수정할 대상의 이메일 : ");
+
+        Member foundMember = mr.findByEmail(email);
+        if (foundMember != null) {
+            //수정 진행
+            System.out.printf("%s님의 비밀번호를 변경합니다!\n", foundMember);
+            //기존 비밀번호와 같으면 변경 취소
+            String newPassword = input("# 새로운 비밀번호: ");
+            if (foundMember.password.equals(newPassword)) {
+                System.out.println("#기존 비밀번호와 같습니다!");
+                return;
+            }
+            mr.changePassword(email, newPassword);
+            System.out.println("\n# 비밀번호가 성공적으로 수저오");
+
+        } else {
+            System.out.println("\n# 조회 결과가 없습니다.");
+        }
+
     }
 
     String input(String message) {
@@ -92,7 +146,8 @@ public class MemberView {
         String password = input("# 패스워드: ");
 
         Gender gender;
-        checkGender: while (true) {
+        checkGender:
+        while (true) {
             String inputGender = input("# 성별[M/F] : ");
             switch (inputGender.toUpperCase().charAt(0)) {
                 case 'M':

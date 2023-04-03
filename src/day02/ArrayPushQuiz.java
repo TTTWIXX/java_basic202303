@@ -50,7 +50,7 @@ public class ArrayPushQuiz {
                         System.out.println("더이상 제거할 음식이 없습니다.");
                     }
             }
-            sc.close();
+
         }
 
 

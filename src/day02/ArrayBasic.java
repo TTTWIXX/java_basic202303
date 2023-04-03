@@ -16,7 +16,7 @@ public class ArrayBasic {
         arr[1] = 77;
         arr[2] = arr[0] + 20;
         arr[3] = (int) 66.7;
-        // arr[5]=50; 런타임 에러
+        // arr[5]=50; 런타임 에러  // 인덱스는 4번까지
 
         // 배열의 길이 - 저장 데이터 개수
         System.out.printf("배열의 길이 : %d\n ", arr.length);
