@@ -93,11 +93,12 @@ public class MemberRepository {
         return null;
     }
 
-    /*
+    /**
      * 이메일을 통해 저자된 회원의 인덱스값을 알아내는 메서드
      * @param email 탐색 대상의 이메일
      * @return : 찾아낸 인덱스, 못찾으면 -1리턴
-     * */
+     */
+
     int findIndexByEmail(String email) {
         for (int i = 0; i < memberList.length; i++) {
             if (memberList[i].email.equals(email))
@@ -109,7 +110,7 @@ public class MemberRepository {
     /**
      * 비밀번호를 수정하는 기능
      *
-     * @param email:      수정 대상의 이메일
+     * @param email: 수정 대상의 이메일
      * @param newPassword : 변경할 새로운 비밀번호
      */
     boolean changePassword(String email, String newPassword) {
