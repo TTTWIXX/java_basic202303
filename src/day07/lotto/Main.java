@@ -7,8 +7,10 @@ public class Main {
 
 //        Lotto.information();
 
+
+//        Lotto.makeList();
+//        Lotto.inputNum();
         Lotto.checkLotto();
-
-
+//Lotto.checkDouble(Lotto.inputNum());
     }
 }
