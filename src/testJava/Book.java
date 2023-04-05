@@ -37,4 +37,11 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+
+    public String info() {
+
+
+        return String.format("# 제목 : %s, 저자 : %s\n",getTitle(),getAuthor());
+    }
 }

@@ -108,5 +108,8 @@ public class StringList {
         temp[index] = newData;
         sArr = temp;
     }
+    public String[] getsArr() {
+        return sArr;
+    }
 
 }

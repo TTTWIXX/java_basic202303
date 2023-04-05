@@ -1,7 +1,10 @@
 package testJava;
 
-import day08.book.LibraryView;
+import static testJava.LibraryView.*;
 
 public class Run {
-         LibraryView.start();
+    public static void main(String[] args) {
+        start();
+
+    }
 }
