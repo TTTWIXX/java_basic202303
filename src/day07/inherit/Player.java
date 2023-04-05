@@ -12,7 +12,6 @@ public class Player extends Object {
 
     public Player(String nickName) {
 
-        System.out.println("Player의 생성자 호출!");
         this.nickName = nickName;
         this.level = 1;
         this.hp = 50;

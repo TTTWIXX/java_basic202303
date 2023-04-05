@@ -19,7 +19,7 @@ public class Lotto {
         for (int i = 0; i < lottoList.length; i++) {
             lottoList[i] = makeRandom();
         }
-        System.out.println(lottoList);
+//        System.out.println(lottoList);
         return lottoList;
     }
 
@@ -46,31 +46,30 @@ public class Lotto {
         return temp;
     }
 
-    public static void checkDouble() {
-        inputNum();
+    public static boolean checkDouble(int[] temp) {
+        boolean result = true;
         for (int i = 0; i < temp.length; i++) {
             for (int j = i + 1; j < temp.length; j++) {
                 if (temp[i] == temp[j]) {
-                    System.out.println("중복입니다.");
-
-                    System.exit(0);
+                    result = false;
                 }
 
             }
 
 
         }
+        return result;
 
     }
 
 
     public static void checkLotto() {
-        int[] a = makeList();
-        inputNum();
-        int[] b=temp;
-
+         //1등 당첨 번호
+        int[] b = inputNum();
         int count = 1;
         while (true) {
+            int[] a = makeList();
+            if(checkDouble(a));
             if (Arrays.equals(a, b)) {
                 System.out.println(count + "번만에 당첨!!");
                 break;
