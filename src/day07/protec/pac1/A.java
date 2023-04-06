@@ -5,13 +5,21 @@ public class A {
     protected int f1;
     int f2; // default
 
-    protected void m1(){
-
-    }
-    void m2(){ //default
+    protected void m1() {
 
     }
 
-    protected A(int a){}
-    A(String s){}
+    void m2() { //default
+
+    }
+
+    public A() {
+
+    }
+
+    protected A(int a) {
+    }
+
+    A(String s) {
+    }
 }

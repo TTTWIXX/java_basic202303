@@ -50,12 +50,10 @@ public class BookUser {
     public void setCouponCount(int couponCount) {
         this.couponCount = couponCount;
     }
-<<<<<<< HEAD
-=======
 
     public String getGenderToString() {
 
         return getGender() == Gender.MALE ? "남성" : "여성";
     }
->>>>>>> origin/master
+
 }

@@ -8,7 +8,7 @@ public class StringList {
     // 필드
     private String[] sArr;
 
-    // 생성자
+//     생성자
     public StringList() {
 //        System.out.println("StringList 생성자 끌려옴");
         sArr = new String[0];
