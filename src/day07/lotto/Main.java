@@ -2,6 +2,8 @@ package day07.lotto;
 
 import java.util.Arrays;
 
+import static day07.lotto.Lotto.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,7 +12,7 @@ public class Main {
 
 //        Lotto.makeList();
 //        Lotto.inputNum();
-        Lotto.checkLotto();
+        checkLotto();
 //Lotto.checkDouble(Lotto.inputNum());
     }
 }

@@ -47,35 +47,34 @@ public class Lotto {
     }
 
     public static boolean checkDouble(int[] temp) {
-        boolean result = true;
+
         for (int i = 0; i < temp.length; i++) {
             for (int j = i + 1; j < temp.length; j++) {
                 if (temp[i] == temp[j]) {
-                    result = false;
+                    return false;
                 }
-
             }
-
-
         }
-        return result;
+        return true;
 
     }
 
 
     public static void checkLotto() {
-         //1등 당첨 번호
+        //1등 당첨 번호
         int[] b = inputNum();
+        System.out.println(Arrays.toString(b));
         int count = 1;
         while (true) {
             int[] a = makeList();
-            if(checkDouble(a));
-            if (Arrays.equals(a, b)) {
-                System.out.println(count + "번만에 당첨!!");
-                break;
-            } else {
-                count++;
-                System.out.println(count + "번째");
+            if (checkDouble(a)) {
+                if (Arrays.equals(a, b)) {
+                    System.out.println(count + "번만에 당첨!!");
+                    break;
+                } else {
+                    count++;
+                    System.out.println(count + "번째");
+                }
             }
         }
 
