@@ -2,7 +2,6 @@ package testJava;
 
 
 import day05.member.Gender;
-
 import java.util.Arrays;
 
 import static day05.member.Gender.FEMALE;
@@ -20,42 +19,20 @@ public class LibraryView {
     }
 
     //회원정보 입력처리
-    public static void makeNewBookUser() {
-        System.out.println("\n# 회원 정보를 입력해주세요.");
-        String name = input("# 이름 : ");
-        int age = Integer.parseInt(input("# 나이 : "));
-        Gender gender = inputGender();
-        //입력받은 값을 객체로 포장
-        BookUser userInfo = new BookUser();
-        userInfo.setName(name);
-        userInfo.setAge(age);
-        userInfo.setGender(gender);
+    public void inputInfo(){
+        System.out.println("# 회원 정보를 입력해주세요.");
+        String name=input("이름 : ");
+        int age=Integer.parseInt(input("이름 : "));
+        String genderInput=input("성별(M/F) : ");
 
-        //입력받은 유저객체를 저장소로 보내기
-        repository.register(userInfo);
+
 
     }
 
-    private static day05.member.Gender inputGender() {
-        while (true) {
-            String inputGender = input("# 성별(M/F): ");
-            day05.member.Gender gender;
-            switch (inputGender.toUpperCase().charAt(0)) {
-                case 'M':
-                    return MALE;
-                case 'F':
-                    return FEMALE;
-                default:
-                    System.out.println("\n# 성별을 잘못 입력했습니다.");
-            }
-        }
-    }
+
+
     public static void start(){
-        makeNewBookUser();
 
-        //메인메뉴뛰우기
-        showMainScreen();
-        selectMenu();
 
 
     }
