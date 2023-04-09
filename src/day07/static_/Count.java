@@ -12,7 +12,7 @@ public class Count {
         // 필드 참조(static메서드 안에서는 static필드만 참조가능)
 
         System.out.println("x = " + x);
-        // System.out.println("y = " + this.y);  어떤 y인지 알수가없다. 클래스.m1으로 불러오기때문에
+//         System.out.println("y = " + this.y);  어떤 y인지 알수가없다. 클래스.m1으로 불러오기때문에
         // static은 this정보를 알수가 없어서 호출 불가능
         // this를 알게하면 된다.
         Count c3 = new Count();

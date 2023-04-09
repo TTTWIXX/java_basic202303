@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        MemberView mv = new MemberView();
-//        mv.viewProcess();
+        MemberView mv = new MemberView();
+        mv.viewProcess();
     }
 }

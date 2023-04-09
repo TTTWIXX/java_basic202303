@@ -1,12 +1,10 @@
 package testMember.member;
 
-import day05.member.Gender;
-
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-import static day05.member.Gender.FEMALE;
-import static day05.member.Gender.MALE;
+import static testMember.member.Gender.*;
+import static testMember.member.Gender.FEMALE;
+import static testMember.member.Gender.MALE;
 
 // 역할: 회원관리 앱의 입출력을 담당
 public class MemberView {
@@ -46,11 +44,11 @@ public class MemberView {
                     signUp();
                     break;
                 case "2":
-//                    showDetailMember();
+                    showDetailMember();
                     break;
                 case "3":
-//                    mr.showMembers();
-//                    stop();
+                    mr.showMembers();
+                    stop();
                     break;
                 case "4":
                     changePasswordViewProcess();
@@ -74,13 +72,56 @@ public class MemberView {
         }
     }
 
+    private void stop() {
+
+        String inputEnter = input("======= 엔터를 눌러서 계속...======\n");
+        sc.nextLine();
+
+    }
+
+    private void showDetailMember() {
+
+        String email = input("# 이메일");
+        if (mr.isDuplicate(email)) {
+            Member user = mr.findUser(email);
+            System.out.println("======조회 결과======");
+            System.out.println("# 이름 : " + user.memberName);
+            System.out.println("# 비밀번호 : " + user.password);
+            System.out.println("# 성별 : " + user.gender);
+            System.out.println("# 나이 : " + user.age + "세");
+        } else {
+            System.out.println("회원이 존재하지 않습니다.");
+        }
+
+
+    }
+
     void removeMemberViewProcess() {
-
         // 삭제대상 이메일 입력받기
-
+        String deleteEmail = input("# 삭제할 email을 입력하세요\n>> ");
         // 존재하는지 확인 후 삭제 처리 위임
+        if (mr.findIndex(deleteEmail) != -1) {
 
-            // -> 한번 더 y/n으로 삭제여부 묻기
+            String choice = input(mr.memberList[mr.findIndex(deleteEmail)].memberName + "님의 정보를 정말 삭제합니까?? [y/n]");
+
+            switch (choice.toLowerCase().charAt(0)) {
+                case 'y':
+                    Member[] temp = new Member[mr.memberList.length - 1];
+
+                    for (int i = mr.findIndex(deleteEmail); i < temp.length; i++) {
+                        temp[i] = mr.memberList[i + 1];
+                    }
+                    mr.memberList = temp;
+                    temp = null;
+                case 'n':
+                    break;
+            }
+
+        } else {
+            System.out.println("해당 회원은 존재하지 않습니다.");
+        }
+
+        // -> 한번 더 y/n으로 삭제여부 묻기
 
 
     }
@@ -89,13 +130,13 @@ public class MemberView {
     //비밀번호 변경 입출력 처리
     void changePasswordViewProcess() {
 
+        mr = new MemberRepository();
+        //수정 진행
         String email = input("# 수정할 대상의 이메일 : ");
+        String newPassword = input("# 수정할 비밀번호를 입력하세요\n>> ");
+        mr.changePassword(email, newPassword);
 
-
-            //수정 진행
-
-            //기존 비밀번호와 같으면 변경 취소
-
+        //기존 비밀번호와 같으면 변경 취소
 
 
     }
@@ -110,42 +151,42 @@ public class MemberView {
 
 
     // 회원 등록 입력 처리
-    void signUp(){
-        while(true) {
-            System.out.println("email 입력하세요");
-            String email=input(">>");
+    void signUp() {
 
+        System.out.println("email 입력하세요");
+        String email = input(">>");
+        String name;
+        while (true) {
             System.out.println("이름을 입력하세요: ");
-            String name = input(">>");
+            name = input(">>");
+
             if (mr.isDuplicate(name)) {
                 System.out.println("중복입니다.");
-                return;
-            }
+            } else break;
+        }
+        String password = input("패스워드를 입력하세요 : ");
 
-
+        Gender gender;
+        outwhile:
+        while (true) {
             System.out.println("성별을 입력하세요: [M/F]");
             String convertGender = input(">>");
-            Gender gender;
-            if (convertGender.toUpperCase().charAt(0) == 'M') {
-               gender = MALE;
-
-            } else if (convertGender.toUpperCase().charAt(0) == 'F') {
-                gender = FEMALE;
-
-            } else {
-                System.out.println("올바른 성별을 입력해주세요");
+            switch (convertGender.toUpperCase().charAt(0)) {
+                case 'M':
+                    gender = MALE;
+                    break outwhile;
+                case 'F':
+                    gender = FEMALE;
+                    break outwhile;
+                default:
+                    System.out.println("올바른 값을 입력하세요");
             }
-            System.out.println("나이를 입력하세요: ");
-            int age=input(">>");
-            Member member=new Member(email,name,password.gender,)
         }
+        System.out.println("나이를 입력하세요: ");
+        int age = Integer.parseInt(input(">>"));
 
-
-
-
-
-
-
+        Member member = new Member(mr.memberList.length + 1, email, password, name, gender, age);
+        mr.addMemberList(member);
 
 
     }
@@ -153,10 +194,10 @@ public class MemberView {
 
     // 회원 개별조회를 위한 입출력처리
 
-        // 이메일 입력하세요!
 
-        // 찾은 회원의 정보 ~~~~~~
+    // 이메일 입력하세요!
 
+    // 찾은 회원의 정보 ~~~~~~
 
 
 }

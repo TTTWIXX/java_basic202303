@@ -1,6 +1,6 @@
 package day05.member;
 
-import java.util.Scanner;
+
 
 // 역할: 회원 저장소 역할
 public class MemberRepository {

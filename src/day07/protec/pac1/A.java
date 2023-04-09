@@ -5,6 +5,7 @@ public class A {
     protected int f1;
     int f2; // default
 
+
     protected void m1() {
 
     }

@@ -1,6 +1,5 @@
 package day07.static_;
 
-import day07.newutli.Utility;
 
 import static day07.newutli.Utility.*;
 import static java.lang.Math.*;

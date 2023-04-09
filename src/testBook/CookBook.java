@@ -1,4 +1,4 @@
-package day08.book;
+package testBook;
 
 public class CookBook extends Book {
     private boolean coupon; // 요리학원 쿠폰 유무
@@ -21,6 +21,7 @@ public class CookBook extends Book {
 
     @Override
     public String info() {
-        return String.format("# 분류: 요리책, %s, 연력제한: %s세", super.info(), this.coupon ? "있음" : "없음");
+
+        return String.format("# 분류: 요리책, %s, 쿠폰개수 : %s",super.info(),(this.coupon)?"있음":"없음");
     }
 }

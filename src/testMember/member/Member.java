@@ -21,5 +21,6 @@ public class Member {
         this.age = age;
     }
 
+
     // 회원정보를 문자열로 만들어서 리턴하는 기능
 }
