@@ -1,6 +1,9 @@
 package day05.member;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
 
 // 역할: 회원 저장소 역할
 public class MemberRepository {
@@ -52,8 +55,25 @@ public class MemberRepository {
         for (int i = 0; i < memberList.length; i++) {
             temp[i] = memberList[i];
         }
+        // 회원가입 시간 등록
+        newMember.regDate = LocalDate.now();
+
         temp[temp.length - 1] = newMember;
         memberList = temp;
+        //save파일 생성
+        try (FileWriter fw = new FileWriter("D:/exercise/member.txt")) {
+            String saveInfo = "";
+            saveInfo += newMember.memberId;
+            saveInfo += "," + newMember.email;
+            saveInfo += "," + newMember.memberName;
+            saveInfo += "," + newMember.password;
+            saveInfo += "," + newMember.gender;
+            saveInfo += "," + newMember.age;
+            fw.append(saveInfo+"\n");
+        } catch (IOException e) {
+            System.out.println("파일 저장 실패");
+        }
+
 
         return true;
     }
@@ -95,6 +115,7 @@ public class MemberRepository {
 
     /**
      * 이메일을 통해 저자된 회원의 인덱스값을 알아내는 메서드
+     *
      * @param email 탐색 대상의 이메일
      * @return : 찾아낸 인덱스, 못찾으면 -1리턴
      */
@@ -110,7 +131,7 @@ public class MemberRepository {
     /**
      * 비밀번호를 수정하는 기능
      *
-     * @param email: 수정 대상의 이메일
+     * @param email:      수정 대상의 이메일
      * @param newPassword : 변경할 새로운 비밀번호
      */
     boolean changePassword(String email, String newPassword) {

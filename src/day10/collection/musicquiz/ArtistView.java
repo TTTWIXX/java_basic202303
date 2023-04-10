@@ -52,6 +52,7 @@ public class ArtistView {
         String artistName = input("- 가수명: ");
         String songName = input("- 노래명: ");
 
+
         // 신규 가수인 경우
         if (!ar.isRegistered(artistName)) {
             ar.addNewArtist(artistName, songName);

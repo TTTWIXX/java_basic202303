@@ -1,10 +1,10 @@
 package day08.book;
 
 public class CartoonBook extends Book {
+
     private int accessAge; // 나이 제한
 
-    public CartoonBook() {
-    }
+    public CartoonBook() {}
 
     public CartoonBook(String title, String author, String publisher, int accessAge) {
         super(title, author, publisher);
@@ -18,8 +18,9 @@ public class CartoonBook extends Book {
     public void setAccessAge(int accessAge) {
         this.accessAge = accessAge;
     }
+
     @Override
-    public String info(){
-        return String.format("# 분류: 만화책, %s, 연력제한: %d세", super.info(),accessAge);
+    public String info() {
+        return String.format("# 분류: 만화책, %s, 연령제한: %d세", super.info(), accessAge);
     }
 }

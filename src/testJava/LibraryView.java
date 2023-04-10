@@ -1,11 +1,8 @@
 package testJava;
 
 
-import day05.member.Gender;
 import java.util.Arrays;
 
-import static day05.member.Gender.FEMALE;
-import static day05.member.Gender.MALE;
 import static day07.newutli.Utility.input;
 
 
@@ -19,23 +16,53 @@ public class LibraryView {
     }
 
     //회원정보 입력처리
-    public void inputInfo(){
+    public static void inputInfo() {
         System.out.println("# 회원 정보를 입력해주세요.");
-        String name=input("이름 : ");
-        int age=Integer.parseInt(input("이름 : "));
-        String genderInput=input("성별(M/F) : ");
+        String name = input("이름 : ");
+        int age = Integer.parseInt(input("나이 : "));
+        Gender gender = getGenderInput();
 
+
+        BookUser bookUser = new BookUser();
+        bookUser.setName(name);
+        bookUser.setAge(age);
+        bookUser.setGender(gender);
+
+        repository.register(bookUser);
 
 
     }
 
+    private static Gender getGenderInput() {
+
+        while (true) {
+            String genderInput = input("성별(M/F) : ");
+            Gender gender = null;
+            switch (genderInput.toUpperCase().charAt(0)) {
+                case 'M':
+                    return Gender.MALE;
+                case 'F':
+                    return Gender.FEMALE;
+
+            }
+
+        }
+
+    }
 
 
-    public static void start(){
+    public static void start() {
+        inputInfo();
 
+
+        while (true) {
+            showMainScreen();
+            selectMenu();
+        }
 
 
     }
+
     private static void showMainScreen() {
 
         System.out.println("\n============ 도서 메뉴 ==============");
@@ -45,12 +72,13 @@ public class LibraryView {
         System.out.println("# 4. 도서 대여하기");
         System.out.println("# 9. 프로그램 종료하기");
     }
-    private static void  selectMenu(){
-        String menuNum=input("-메뉴 번호 :");
-        switch (menuNum){
+
+    private static void selectMenu() {
+        String menuNum = input("-메뉴 번호 :");
+        switch (menuNum) {
             case "1":
                 //회원정보 출력
-                BookUser user=repository.findBookUser();
+                BookUser user = repository.findBookUser();
                 System.out.println("\n******** 회원님 정보 ********");
                 System.out.println("# 회원명: " + user.getName());
                 System.out.println("# 나이: " + user.getAge());
@@ -59,27 +87,36 @@ public class LibraryView {
                 break;
             case "2":
                 System.out.println("\n============ 모든 도서 정보 ===========");
-                String[] infoList=repository.getBookList();
+                String[] infoList = repository.getBookList();
                 for (String bookInfo : infoList) {
                     System.out.printf(bookInfo);
-                }break;
+                }
+                break;
             case "3":
                 //사용자에게 검색어를 입력받는다.
-                String keyword=input("# 검색어 : ");
+                String keyword = input("# 검색어 : ");
                 // 저장소에게 해당 검색어를 주면서 검색에
                 // 걸린 책 정보를 내노라고 해야함
-
-                String[] bookInfoList= repository.searchBookInfoList(keyword);
+                String[] bookInfoList = repository.searchBookInfoList(keyword);
                 System.out.printf(Arrays.toString(bookInfoList));
                 break;
             case "4":
+                System.out.println("============ 대여가능한 도서 정보 ===========");
+                int bookNum=1;
+                for (String bookList : repository.getBookList()) {
+                    System.out.println(bookNum+bookList);
+                    bookNum++;
+                }
+                int borrowBookNum = Integer.parseInt(input("-대여할 도서 번호 입력"));
+
             case "5":
             case "9":
             default:
                 System.out.println("\n# 메뉴번호를 똑바로 입력하시오!");
         }
-    };
+    }
 
+    ;
 
 
 }

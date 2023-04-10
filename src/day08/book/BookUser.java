@@ -3,11 +3,11 @@ package day08.book;
 import day05.member.Gender;
 
 public class BookUser {
-    private String name; // 도사관 회원 이름
-    private int age; // 도서관 회원 나이
-    private Gender gender; //  성별
-    private int couponCount;
 
+    private String name; // 도서관 회원 이름
+    private int age; // 도서관 회원 나이
+    private Gender gender; // 성별
+    private int couponCount; // 쿠폰 갯수
     private Book[] rentBookList; // 빌린 책 정보들
 
     public BookUser() {
@@ -39,10 +39,10 @@ public class BookUser {
     public Gender getGender() {
         return gender;
     }
-
-    public void setCouponCount(int couponCount) {
-        this.couponCount = couponCount;
+    public String getGenderToString() {
+        return getGender() == Gender.MALE ? "남성" : "여성";
     }
+
     public void setGender(Gender gender) {
         this.gender = gender;
     }
@@ -51,8 +51,7 @@ public class BookUser {
         return couponCount;
     }
 
-    public String getGenderToString(){
-        return getGender()==Gender.MALE?"남성":"여성";
+    public void setCouponCount(int couponCount) {
+        this.couponCount = couponCount;
     }
-
 }
