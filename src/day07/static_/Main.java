@@ -12,8 +12,9 @@ public class Main {
         out.println(Count.x);
         out.println(random());
 
-        Count.m1();//메모리 한개이므로 객체생성 안하고 클래스. 으로 호출
-        //c2.m2(); 객체 생성을 하고 불러야 한다.
+        Count.m1();
+        // 메모리 한개이므로 객체생성 안하고 클래스. 으로 호출
+        // c2.m2(); 객체 생성을 하고 불러야 한다.
 
         Count c1 = new Count();
         Count c2 = new Count();

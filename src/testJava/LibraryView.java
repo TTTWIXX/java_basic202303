@@ -102,12 +102,23 @@ public class LibraryView {
                 break;
             case "4":
                 System.out.println("============ 대여가능한 도서 정보 ===========");
-                int bookNum=1;
+                int bookNum = 1;
                 for (String bookList : repository.getBookList()) {
-                    System.out.println(bookNum+bookList);
+                    System.out.println(bookNum + bookList);
                     bookNum++;
                 }
                 int borrowBookNum = Integer.parseInt(input("-대여할 도서 번호 입력"));
+                RentedBook rentResult = repository.rentBook(borrowBookNum);
+                switch (rentResult) {
+                    case RENT_SUCCESS_WITH_COUPON:
+                        System.out.println("쿠폰과 함께 구매가 완료되었습니다");
+                        break;
+                    case RENT_SUCCESS:
+                        System.out.println("구매가 완료되었습니다.");
+                        break;
+                    case RENT_FAIL:
+                        System.out.println("구매에 실패하였습니다.");
+                }
 
             case "5":
             case "9":
@@ -115,8 +126,6 @@ public class LibraryView {
                 System.out.println("\n# 메뉴번호를 똑바로 입력하시오!");
         }
     }
-
-    ;
 
 
 }

@@ -2,6 +2,8 @@ package testJava;
 
 import day04.array.StringList;
 
+import static testJava.RentedBook.*;
+
 public class LibraryRepository {
     private static BookUser bookUser;
 
@@ -48,6 +50,25 @@ public class LibraryRepository {
         return list.getsArr();
     }
 
-    //
+    public RentedBook rentBook(int borrowBookNum) {
+
+        Book rentBook = booklist[borrowBookNum - 1];
+
+        if (rentBook instanceof CartoonBook) {
+            if (bookUser.getAge() > ((CartoonBook) rentBook).getAccessAge()) {
+                return RENT_SUCCESS;
+            } else
+                return RENT_FAIL;
+        } else if (rentBook instanceof CookBook) {
+            if (((CookBook) rentBook).isCoupon()) {
+                bookUser.setCouponCount(bookUser.getCouponCount() + 1);
+                return RENT_SUCCESS_WITH_COUPON;
+            } else
+                return RENT_SUCCESS;
+        } else
+            return RENT_FAIL;
+
+    }
+
 
 }
