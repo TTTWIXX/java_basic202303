@@ -2,7 +2,7 @@ package testJava;
 
 import day04.array.StringList;
 
-import static testJava.RentStatus.*;
+import static testJava.RentedBook.*;
 
 public class LibraryRepository {
     private static BookUser bookUser;

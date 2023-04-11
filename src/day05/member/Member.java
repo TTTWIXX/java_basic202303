@@ -9,7 +9,7 @@ public class Member {
     int memberId;
     String email;
     String password;
-    String memberName;
+    public String memberName;
     Gender gender;
     int age;
 

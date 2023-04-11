@@ -4,7 +4,7 @@ package testJava;
 import java.util.Arrays;
 
 import static day07.newutli.Utility.input;
-
+import static testJava.RentStatus.*;
 
 
 public class LibraryView {
@@ -109,14 +109,25 @@ public class LibraryView {
                 }
                 int borrowBookNum = Integer.parseInt(input("-대여할 도서 번호 입력"));
                 RentStatus rentStatus=repository.rentBook(borrowBookNum);
-                if(rentStatus==RentStatus.RENT_SUCCESS_WITH_COUPON){
+                if(rentStatus== RENT_SUCCESS_WITH_COUPON){
                     System.out.println("# 성공적으로 요리책이 쿠폰발급과 함께 대여되었습니다.");
-                }else if(rentStatus==RentStatus.RENT_SUCCESS){
+                }else if(rentStatus== RENT_SUCCESS){
                     System.out.println("# 도서가 성공적으로 대여 되었습니다.");
                 }else{
                     System.out.println("# 도서 대여에 실패했습니다.");
                 }
                 break;
+                RentStatus rentResult = repository.rentBook(borrowBookNum);
+                switch (rentResult) {
+                    case RENT_SUCCESS_WITH_COUPON:
+                        System.out.println("쿠폰과 함께 구매가 완료되었습니다");
+                        break;
+                    case RENT_SUCCESS:
+                        System.out.println("구매가 완료되었습니다.");
+                        break;
+                    case RENT_FAIL:
+                        System.out.println("구매에 실패하였습니다.");
+                }
 
             case "5":
             case "9":
