@@ -105,8 +105,8 @@ public class LibraryView {
                 } else {
                     System.out.println("\n# 검색 결과가 없습니다.");
                 }
-
                 break;
+
             case "4":
                 // 대여가능한 책의 목록을 번호와 함께 출력
                 String[] rentalList = repository.getBookInfoList();

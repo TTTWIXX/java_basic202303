@@ -4,36 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52921595-1a46-42f8-a8d5-7fe931d372dd" name="Changes" comment="0407">
+    <list default="true" id="52921595-1a46-42f8-a8d5-7fe931d372dd" name="Changes" comment="0410 08:20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/member/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/member/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/BookUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/CartoonBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/CookBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/InfoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/LibraryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/LibrarySystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/LibraryView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/RentStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day08/book/Run.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day10/collection/musicquiz/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/musicquiz/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day10/collection/musicquiz/ArtistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/musicquiz/ArtistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day10/collection/musicquiz/ArtistView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/musicquiz/ArtistView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day10/collection/musicquiz/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/musicquiz/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/BookUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/CartoonBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/CookBook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/LibraryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/LibraryView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/RentStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testBook/Run.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testJava/BookUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testJava/BookUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day08/book/LibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day08/book/LibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day10/collection/list/ListExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/collection/list/ListExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day10/exception_/LoginValidateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day10/exception_/LoginValidateException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day11/io/rw/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day11/io/rw/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testJava/LibraryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testJava/LibraryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/testJava/LibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testJava/LibraryView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testMember/member/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testMember/member/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/javaExample",
+    "last_opened_file_path": "C:/Study/java_basic202303",
     "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
@@ -105,10 +83,11 @@
       <recent name="D:\java_basic\src\day05" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testJava" />
       <recent name="day10.generic" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.FileInputExample">
+  <component name="RunManager" selected="애플리케이션.SaveSnack">
     <configuration name="FileInputExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day11.io.stream.FileInputExample" />
       <module name="java_basic" />
@@ -122,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileReaderExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day11.io.rw.FileReaderExample" />
+    <configuration name="ListExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.collection.list.ListExample" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day11.io.rw.*" />
+          <option name="PATTERN" value="day10.collection.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoadSnack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="day11.io.objstream.LoadSnack" />
+    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testJava.Run" />
       <module name="java_basic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="day11.io.objstream.*" />
+          <option name="PATTERN" value="testJava.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.SaveSnack" />
+        <item itemvalue="애플리케이션.ListExample" />
+        <item itemvalue="애플리케이션.Run" />
         <item itemvalue="애플리케이션.FileInputExample" />
         <item itemvalue="애플리케이션.day10.collection.musicquiz.Main" />
-        <item itemvalue="애플리케이션.LoadSnack" />
-        <item itemvalue="애플리케이션.SaveSnack" />
-        <item itemvalue="애플리케이션.FileReaderExample" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +256,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -325,5 +304,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/java_basic202303$day08_book_Main.ic" NAME="day08.book.Main 커버리지 결과" MODIFIED="1680691244388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>day08.book.*</FILTER>
+    </SUITE>
   </component>
 </project>

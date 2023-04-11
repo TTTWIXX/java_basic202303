@@ -108,6 +108,15 @@ public class LibraryView {
                     bookNum++;
                 }
                 int borrowBookNum = Integer.parseInt(input("-대여할 도서 번호 입력"));
+                RentStatus rentStatus=repository.rentBook(borrowBookNum);
+                if(rentStatus==RentStatus.RENT_SUCCESS_WITH_COUPON){
+                    System.out.println("# 성공적으로 요리책이 쿠폰발급과 함께 대여되었습니다.");
+                }else if(rentStatus==RentStatus.RENT_SUCCESS){
+                    System.out.println("# 도서가 성공적으로 대여 되었습니다.");
+                }else{
+                    System.out.println("# 도서 대여에 실패했습니다.");
+                }
+                break;
 
             case "5":
             case "9":

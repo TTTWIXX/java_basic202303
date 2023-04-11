@@ -76,11 +76,13 @@ public class ListExample {
         List<Object> tvxq = new ArrayList<>(
                 Arrays.asList("유노윤호", "최강창민")
         );
+
+
         System.out.println("tvxq = " + tvxq);
 
         // 정렬 (듀얼 피벗 큇 정렬): 엄청빠르다
         List<Integer> numbers = new ArrayList<>(
-                Arrays.asList(5,30,17,9,52,41)
+                Arrays.asList(5, 30, 17, 9, 52, 41)
         );
         makeLine();
         System.out.println("numbers = " + numbers);
